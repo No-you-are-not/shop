@@ -184,14 +184,11 @@ button {
   height: 100%;
   background-color: #2B2B2B;
   position: fixed;
-  right: -300px;
+  right: -400px;
   top: 0;
   text-align: right;
   z-index: 10;
-}
-.cart-content:hover, .cart-content:focus {
-  transform: translate3d(-300px, 0, 0);
-  transition: transform 2s ease-in-out;
+  transition: all 0.3s;
 }
 .cart-content__close-button {
   font-size: 30px;
@@ -289,6 +286,16 @@ button {
 
 .top-item {
   border-top: 1px solid #424242;
+}
+
+.parent {
+  width: 23px;
+  height: 21px;
+  margin-right: 10px;
+}
+.parent:hover .cart-content, .parent:focus .cart-content {
+  transform: translate3d(-400px, 0, 0);
+  transition: transform 2s ease-in-out;
 }
 
 .cart__logo:hover {

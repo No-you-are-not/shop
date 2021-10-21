@@ -31,11 +31,10 @@ $border-color-cart: #424242;
   cursor: pointer;
 }
 
-@mixin all-transition($time)
-{
+@mixin cart-transition{
   .cart-content{
-    transition: all $time;
-    -webkit-transition: all $time;
+    transform: translate3d(-400px, 0, 0);
+    transition: transform 2s ease-in-out;
   }
 }
 
@@ -77,6 +76,7 @@ button {
   text-align: center;
   grid-area: header;
   position: relative;
+
   &__logo{
     width: 106px;
     height: 39px;
@@ -226,15 +226,12 @@ button {
   height: 100%;
   background-color: $cart-color;
   position: fixed;
-  right: -300px;
+  right: -400px;
   top: 0;
   text-align: right;
   z-index: 10;
-  &:hover, &:focus
-  {
-    transform: translate3d(-300px, 0, 0);
-    transition: transform 2s ease-in-out;
-  }
+  transition: all 0.3s;
+
   &__close-button {
     font-size: 30px;
     width: 30px;
@@ -334,6 +331,16 @@ grid-area: cart-name;
 
 .top-item{
   border-top: 1px solid $border-color-cart;
+}
+
+.parent{
+  width: 23px;
+  height: 21px;
+  margin-right: 10px;
+  &:hover, &:focus
+  {
+    @include cart-transition;
+  }
 }
 
 .cart__logo:hover{
