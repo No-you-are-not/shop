@@ -7,7 +7,7 @@ $border-color-cart: #424242;
 
 @mixin selected-section{
   color: black;
-  transition: color 0.6s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 @mixin item-shadow{
@@ -27,11 +27,8 @@ $border-color-cart: #424242;
   margin-right: 9px;
 }
 
-@mixin cart-hover{
-  cursor: pointer;
-}
-
 @mixin cart-transition{
+  cursor: pointer;
   .cart-content{
     transform: translate3d(-400px, 0, 0);
     transition: transform 2s ease-in-out;
@@ -89,6 +86,15 @@ button {
     float: right;
     margin-top: 30px;
     margin-right: 100px;
+    &__parent{
+      width: 23px;
+      height: 21px;
+      margin-right: 10px;
+      &:hover, &:focus
+      {
+        @include cart-transition;
+      }
+    }
     &__logo{
       width: 23px;
       height: 21px;
@@ -261,15 +267,14 @@ button {
   }
 
   &__buy-button{
-    height: 50%;
-    position: relative;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    margin-top: 60%;
   }
 }
 
 .buy-button__button{
-  position: absolute;
-  right: 70px;
-  bottom: 50px;
   width: 260px;
   height: 60px;
   font-size: 16px;
@@ -333,16 +338,3 @@ grid-area: cart-name;
   border-top: 1px solid $border-color-cart;
 }
 
-.parent{
-  width: 23px;
-  height: 21px;
-  margin-right: 10px;
-  &:hover, &:focus
-  {
-    @include cart-transition;
-  }
-}
-
-.cart__logo:hover{
-  @include cart-hover;
-}
