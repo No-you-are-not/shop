@@ -59,7 +59,7 @@ button {
 }
 .header__cart__parent:hover .cart-content, .header__cart__parent:focus .cart-content {
   transform: translate3d(-400px, 0, 0);
-  transition: transform 2s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 .header__cart__logo {
   width: 23px;

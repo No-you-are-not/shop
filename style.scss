@@ -4,7 +4,6 @@ $shadow-color: rgba(0, 0, 0, 0.0697);
 $cart-color: #2B2B2B;
 $border-color-cart: #424242;
 
-
 @mixin selected-section{
   color: black;
   transition: color 0.2s ease-in-out;
@@ -31,7 +30,7 @@ $border-color-cart: #424242;
   cursor: pointer;
   .cart-content{
     transform: translate3d(-400px, 0, 0);
-    transition: transform 2s ease-in-out;
+    transition: transform 0.5s ease-in-out;
   }
 }
 
